@@ -9,18 +9,38 @@ var context = canvas.getContext("2d");
 //the context is the object that allow us to draw in the canvas .. we will use 2d not the 3d
 
 context.strokeStyle = "red";
-//choose a color
+//we choose a color
 
-for(var i = 0; i < 3; i++)
-	for(var j = 0; j < 3; j++)
-		context.strokeRect(i * 50, j * 50, 50, 50);
+for(var i = 0; i < 3; i++){
+	for(var j = 0; j < 3; j++){
+	context.strokeRect(i * 50, j * 50, 50, 50);
+	}
+}
 //we draw the grid (9 rectangles)
 
-var matrix[];
+var matrix = [];
 for (var i = 0; i < 3; i++){
 	matrix[i] = [];
-	for(var j = 0; j < 3; j++)
-		matrix[][] = -1;
+	for(var j = 0; j < 3; j++){
+		matrix[i][j] = -1;
+	}
 }
 matrix[1][1] = 0;
-//we initialize that all the boxes are hidden except the slogan of Mozilla Tunisia
+//we initialize that all the boxes as hidden except the slogan of Mozilla Tunisia
+
+var distribution = [];
+for(var i = 0; i < 3; i++){
+	distribution[i] = [];
+}
+distribution[0][0] = 1;
+distribution[0][1] = 1;
+distribution[0][2] = 2;
+distribution[1][0] = 2;
+distribution[1][2] = 3;
+distribution[2][0] = 3;
+distribution[2][1] = 4;
+distribution[2][2] = 4;
+var myImage = new Image();
+myImage.src = "img/Slogan.jpg"
+context.drawImage(myImage, 50, 58);
+//we distribute the values of the matrix statically
